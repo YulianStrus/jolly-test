@@ -1,0 +1,91 @@
+.discover_new{
+  position: relative;
+}
+.discover_item_photo{
+  width: 100%;
+  height: 612px;
+  object-fit: cover;
+}
+.discover_content{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 1000px;
+  z-index: 10;
+  top: 50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+
+  .discover_title{
+    position: relative;
+
+    .stripes{
+      position: absolute;
+
+      left: -5px;
+      top: -35px;
+    }
+    .star{
+      position: absolute;
+
+      right: 80px;
+      top: -80px;
+    }
+    .rainbow{
+      position: absolute;
+
+      right: -70px;
+      top: 170px;
+    }
+  }
+
+  .discover_buttons{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+.discover_slider .slick-arrow{
+  position: absolute;
+  top: calc(50% - 35px);
+  font-size: 0;
+  border: 0;
+  z-index: 10;
+}
+.discover_slider .discover_prev{
+  height: 22px;
+  width: 13px;
+  left: 45px;
+}
+.discover_slider .discover_next{
+  height: 22px;
+  width: 13px;
+  right: 45px;
+}
+.slick-dots{
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+
+  left:50%;
+  bottom: 40px;
+  transform:translate(-50%);
+}
+.slick-dots li.slick-active button{
+  opacity: 1;
+  background: $pink;
+}
+.slick-dots li button{
+  font-size: 0;
+
+  width: 15px;
+  height: 15px;
+
+  border: none;
+  border-radius: 50%;
+  background: $colorWhite;
+  opacity: 0.7;
+}

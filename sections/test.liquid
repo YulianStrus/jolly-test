@@ -1,0 +1,23 @@
+<div>
+    {% if section.setting.img != blanc %}
+    <img src="{{ section.setting.img | img_url: "master" }}" alt="">
+    {% endif %}
+</div>
+
+{% schema %}
+{
+    "name": "Test section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "img",
+            "lable": "Photo"
+        }
+    ],
+    "presets": [
+        {
+            "name":"Test section"
+        }
+    ]
+}
+{% endschema %}
