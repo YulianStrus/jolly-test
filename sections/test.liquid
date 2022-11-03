@@ -1,7 +1,18 @@
+<div>
+    {% if section.setting.image != blanc %}
+    <img src="{{ section.setting.image | img_url: "master" }}" alt="">
+    {% endif %}
+</div>
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Test section",
+    "settings": [
+      {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.image-banner.settings.image.label"
+        }
+    ]
   }
 {% endschema %}
 
