@@ -2,7 +2,7 @@
 <div class="discover_new">
 	<div class="discover_content">
 		<div class="discover_title">
-			<img src="img/svg/icons/stripes.svg" alt="" class="stripes">
+			<div class="stripes">{% render 'stripes' %}</div>
             {% if section.settings.header != blanc %}          
                 <h1 class="big_title color-white">{{ section.settings.header }}</h1>
             {% endif %}

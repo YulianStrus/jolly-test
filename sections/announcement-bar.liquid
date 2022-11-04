@@ -2,7 +2,20 @@
 <div class="subheader">
 	<div class="subheader_menu">
 		<div class="menu__item">
-      {% render 'icon-car' %}
+      {% case block.settings.select_icon %}
+        {% when 'car' %}
+            {% render 'icon-car' %}
+        {% when 'hand' %}
+            {% render 'icon-hand-made' %}
+        {% when 'guarantee' %}
+            {% render 'icon-guarantee' %}
+        {% when 'heart' %}
+            {% render 'icon-heart' %}
+        {% when 'flag' %}
+            {% render 'icon-germany' %}
+        {% when 'replacement' %}
+            {% render 'icon-replacement' %}
+        {% endcase %}
 			<p class="menu__title">{{ block.settings.text | escape }}</p>
 		</div>
 	</div>
@@ -12,17 +25,44 @@
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
-  "max_blocks": 12,
+  "max_blocks": 6,
   "blocks": [
     {
       "type": "announcement",
       "name": "t:sections.announcement-bar.blocks.announcement.name",
       "settings": [
         {
-          "type":"image_picker",
-          "id": "icon",
-          "label":"icon"
-        },
+          "type":"select",
+          "id":"select_icon",
+          "label":"Select icon",
+          "options":[
+             {
+                "value":"car",
+                "label":"Car"
+             },
+             {
+                "value":"hand",
+                "label":"Hand"
+             },
+             {
+                "value":"guarantee",
+                "label":"Guarantee"
+             },
+             {
+                "value":"heart",
+                "label":"Heart"
+             },
+             {
+                "value":"flag",
+                "label":"Flag"
+             },
+             {
+                "value":"replacement",
+                "label":"Replacement"
+             }
+          ],
+          "default": "car"
+       },
         {
           "type": "text",
           "id": "text",
