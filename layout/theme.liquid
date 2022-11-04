@@ -27,8 +27,9 @@
 
     {{ content_for_header }}
 
-
-
+    <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+    
     {{ 'style.css' | asset_url | stylesheet_tag }}
 
   </head>
@@ -57,8 +58,7 @@
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>      
-      <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
-      <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+
     {%- endif -%}
   </body>
 </html>
