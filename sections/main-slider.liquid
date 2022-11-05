@@ -6,15 +6,17 @@
             {% if section.settings.header != blanc %}          
                 <h1 class="big_title color-white">{{ section.settings.header }}</h1>
             {% endif %}
-			<img src="img/svg/icons/star.svg" alt="" class="star">
-			<img src="img/svg/icons/rainbow.svg" alt="" class="rainbow">
+			<div class="star">{% render 'star' %}</div>
+			<div class="rainbow">{% render 'rainbow' %}</div>
 		</div>
 		<div class="discover_buttons">
 			<a class="pink_button" href="#">Shop now</a>
 			<a class="yellow_button" href="#">About us</a>
 		</div>
 	</div>
-	<div class="discover_slider">
+    <button class="discover_prev">{%render 'icon-left-big'%}</button>
+    <button class="discover_next">{%render 'icon-right-big'%}</button>
+	<div class="discover_slider">      
 		<div class="discover_item">
             {% if section.settings.image != blanc %}
                 <img class="discover_item_photo" src= "{{ section.settings.image | img_url: "master" }}" alt="">
@@ -33,7 +35,7 @@
 </div>
 {% schema %}
   {
-    "name": "Test section",
+    "name": "main-slider",
     "settings": [
         {
             "type": "text",
@@ -58,7 +60,7 @@
     ],
     "presets": [
         {
-            "name":"Test section"
+            "name":"main-slider"
         }
     ]
   }

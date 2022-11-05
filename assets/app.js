@@ -27,9 +27,9 @@ $(document).ready(function () {
     infinite: true,
     dots: true,
     // eslint-disable-next-line max-len
-    prevArrow: '<img src=\'img/svg/icons/icon-left-big.svg\' class=\'discover_prev\' alt=\'1\'>',
+    prevArrow: $(".discover_prev"),
     // eslint-disable-next-line max-len
-    nextArrow: '<img src=\'img/svg/icons/icon-right-big.svg\' class=\'discover_next\' alt=\'2\'>'
+    nextArrow: $(".discover_next")
   });
   $('.bestseller_slider').slick({
     infinite: true,
