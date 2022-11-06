@@ -122,7 +122,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "4bc3d6ca-3096-42bf-b334-34ad0ca19410": {
+          "a848c7a5-9e6a-41cc-aac6-bea5e2257957": {
             "type": "announcement",
             "settings": {
               "select_icon": "car",
@@ -132,7 +132,7 @@
           }
         },
         "block_order": [
-          "4bc3d6ca-3096-42bf-b334-34ad0ca19410"
+          "a848c7a5-9e6a-41cc-aac6-bea5e2257957"
         ],
         "settings": {
         }
@@ -141,6 +141,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
+          "logo": "shopify:\/\/shop_images\/logo.png",
           "logo_width": 90,
           "logo_position": "middle-left",
           "menu": "main-menu",
