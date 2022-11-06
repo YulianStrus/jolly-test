@@ -1,0 +1,62 @@
+<div class="made_books">
+	<div class="content_container">
+		<h1 class="made_books_title big_title color-darkPink">{{ section.settings.header }}</h1>
+		<div class="made_books_content">
+			<div class="made_books__steps">
+                {%- for block in section.blocks -%}
+				<div class="made_books__step">
+					<h3 class="made_books__step_title">{{ block.settings.header }}</h3>
+					<p class="made_books__step_text">{{ block.settings.text }}</p>
+				</div>
+                {%endfor%}
+			</div>
+			<img src="{{ section.settings.image | img_url: "master" }}" alt="">
+		</div>
+	</div>
+</div>
+
+{%schema%}
+{
+
+    "name": "madeBook",
+    "max_blocks": 4,
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "default": "How our Quiet Books are made",
+            "label": "Header"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Pictures"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "madeBook",
+            "name": "Step",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default":"Step 1",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                    "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+                }
+        ]
+        }
+    ],
+    "presets": [
+        {
+            "name":"madeBook"
+        }
+    ]
+}
+{%endschema%}
