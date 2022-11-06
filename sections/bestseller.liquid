@@ -1,0 +1,81 @@
+<div class="bestseller">
+	<div class="content_container">
+		<h1 class="big_title color-darkPink">Shop Our Bestseller</h1>
+		<div class="bestseller_slider">
+            {%- for block in section.blocks -%}
+			<div class="bestseller_slider_item_card">
+				<div class="bestseller_card_img">
+					<img src="{{ block.settings.image | img_url: "master" }}" alt="">
+					<div class="bestseller_item_like">{% render 'icon-wish' %}</div>
+				</div>
+				<p>{{ block.settings.header }}</p>
+				<h3>{{ block.settings.price }}</h3>
+                {% if block.settings.button !=blanc %}
+				<button class="pink_button_outline">{{ block.settings.button }}</button>
+                {% endif%}
+			</div>
+            {%endfor%}
+		</div>
+	</div>
+</div>
+
+{%schema%}
+{
+    "name": "bestseller",
+    "max_blocks": 7,
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "default": "Shop Our Bestseller",
+            "label": "Header"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.featured-collection.settings.collection.label"
+          },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Pictures"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "madeBook",
+            "name": "Step",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Pictures"
+                },
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "Jolly Baby - 6 pages Mini Quiet Book",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "price",
+                    "default":"€39,99",
+                    "label": "Price"
+                },
+                {
+                    "type": "text",
+                    "id": "button",
+                    "default": "Add to cart",
+                    "label": "Button"
+                }
+        ]
+        }
+    ],
+    "presets": [
+        {
+            "name":"bestseller"
+        }
+    ]
+}
+{%endschema%}
