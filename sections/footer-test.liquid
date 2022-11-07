@@ -68,7 +68,7 @@
 				<a href="#">{% render 'visa' %}</a>
 			</div>
             {%- when 'copyright' -%}
-			<p class="copyright">{{ block.settings.copyright.header }}</p>
+			<p class="copyright">{{ block.settings.copyright-header }}</p>
             {%- when 'social' -%}
 			<div class="socials">
                 {% if block.settings.facebook %}
@@ -210,7 +210,7 @@
             "settings": [
                 {
                     "type": "text",
-                    "id": "header",
+                    "id": "copyright-header",
                     "default": "© 2022, Jolly Designs",
                     "label": "Header"
                 }
