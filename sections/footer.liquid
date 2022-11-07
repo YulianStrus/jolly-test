@@ -1,12 +1,16 @@
 <footer class="footer">
 	<div class="footer_container">
 		<div class="footer_content">
+			{%- for block in section.blocks -%}
 
+				{%- case block.type -%}
+
+				{%- when 'company' -%}
 			<div class="footer_info">
 				<h1 class="footer_title">JOLLY DESIGNS Ltd.</h1>
 				<p class="footer_info_text">Jolly Designs GmbH stands for unique, magical and wonderful toys. Our products range from Quiet Books, cute accessories for toddlers to wall decor for the nursery.We offer high quality, innovative and responsible products for curious and imaginative little minds.</p>
 			</div>
-
+			{%- when 'info' -%}
 			<div class="footer__blocks">
 				<div class="footer__block">
 					<h1 class="footer_title">Information</h1>
@@ -20,6 +24,7 @@
 					<a href="#" class="footer__block_text">General terms and conditions</a>
 					<a href="#" class="footer__block_text">Refund Policy</a>
 				</div>
+				{%- when 'about' -%}
 				<div class="footer__block footer__block_pd">
 					<h1 class="footer_title">About Us</h1>
 					<a href="#" class="footer__block_text">Our History</a>
@@ -28,6 +33,7 @@
 					<a href="#" class="footer__block_text">Trade Fairs</a>
 					<a href="#" class="footer__block_text">Quiet Books Blog</a>
 				</div>
+				{%- when 'newsletter' -%}
 				<div class="footer__block">
 					<h1 class="footer_title">Newsletter</h1>
 					<form class="footer_form" action="/">
@@ -39,6 +45,8 @@
 						<a href="#" class="footer__block_text">B2B Log-in</a>
 					</div>
 				</div>
+			{%- endcase -%}
+		{% endfor %}
 			</div>
 		</div>
 

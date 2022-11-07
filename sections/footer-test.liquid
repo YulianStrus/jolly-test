@@ -1,0 +1,268 @@
+<footer class="footer">
+	<div class="footer_container">
+		<div class="footer_content">
+			{%- for block in section.blocks -%}
+
+				{%- case block.type -%}
+
+				{%- when 'company' -%}
+			<div class="footer_info">
+				<h1 class="footer_title">JOLLY DESIGNS Ltd.</h1>
+				<p class="footer_info_text">Jolly Designs GmbH stands for unique, magical and wonderful toys. Our products range from Quiet Books, cute accessories for toddlers to wall decor for the nursery.We offer high quality, innovative and responsible products for curious and imaginative little minds.</p>
+			</div>
+			{%- when 'info' -%}
+			<div class="footer__blocks">
+				<div class="footer__block">
+					<h1 class="footer_title">Information</h1>
+					<a href="#" class="footer__block_text">Terms of use</a>
+					<a href="#" class="footer__block_text">Delivery</a>
+					<a href="#" class="footer__block_text">Privacy and data protection</a>
+					<a href="#" class="footer__block_text">Return</a>
+					<a href="#" class="footer__block_text">Cancellation policy</a>
+					<a href="#" class="footer__block_text">Imprint</a>
+					<a href="#" class="footer__block_text">Payment methods</a>
+					<a href="#" class="footer__block_text">General terms and conditions</a>
+					<a href="#" class="footer__block_text">Refund Policy</a>
+				</div>
+				{%- when 'about' -%}
+				<div class="footer__block footer__block_pd">
+					<h1 class="footer_title">About Us</h1>
+					<a href="#" class="footer__block_text">Our History</a>
+					<a href="#" class="footer__block_text">About Us</a>
+					<a href="#" class="footer__block_text">Manufacturing Process</a>
+					<a href="#" class="footer__block_text">Trade Fairs</a>
+					<a href="#" class="footer__block_text">Quiet Books Blog</a>
+				</div>
+				{%- when 'newsletter' -%}
+				<div class="footer__block">
+					<h1 class="footer_title">Newsletter</h1>
+					<form class="footer_form" action="/">
+						<input class="footer_input" type="input" placeholder="E-mail">
+						<input class="footer_button" type="button" value="Subscribe">
+					</form>
+					<div class="footer_auth">
+						<a href="#" class="footer__block_text">Create account</a>
+						<a href="#" class="footer__block_text">B2B Log-in</a>
+					</div>
+				</div>
+			{%- endcase -%}
+		{% endfor %}
+			</div>
+		</div>
+        {%- for block in section.blocks -%}
+
+            {%- case block.type -%}
+
+                {%- when 'pay' -%}
+		<div class="footer_bottom">
+			<div class="divider"></div>
+			<div class="pay">
+				<a href="#">{% render 'amex' %}</a>
+				<a href="#">{% render 'apple_pay' %}</a>
+				<a href="#">{% render 'google_pay' %}</a>
+				<a href="#">{% render 'klarna' %}</a>
+				<a href="#">{% render 'mastercard2' %}</a>
+				<a href="#">{% render 'mastercard' %}</a>
+				<a href="#">{% render 'paypal' %}</a>
+				<a href="#">{% render 'opay' %}</a>
+				<a href="#">{% render 'visa' %}</a>
+			</div>
+            {%- when 'copyright' -%}
+			<p class="copyright">{{ block.settings.copyright.header }}</p>
+            {%- when 'social' -%}
+			<div class="socials">
+                {% if block.settings.facebook %}
+				    <a href="#">{% render 'facebook' %}</a>
+                {% endif %}
+                {% if block.settings.twitter %}
+				    <a href="#">{% render 'twitter' %}</a>
+                {% endif %}
+                {% if block.settings.pinterest %}
+				    <a href="#">{% render 'pinterest' %}</a>
+                {% endif %}
+                {% if block.settings.insta %}
+				    <a href="#">{% render 'insta' %}</a>
+                {% endif %}
+                {% if block.settings.shopify %}
+				    <a href="#">{% render 'shopify' %}</a>
+                {% endif %}
+                {% if block.settings.youtube %}
+				    <a href="#">{% render 'youtube' %}</a>
+                {% endif %}
+			</div>
+		</div>
+    {%- endcase -%}
+{% endfor %}
+	</div>
+</footer>
+
+{% schema %}
+{
+  "name": "footer",
+  "settings": [],
+  "blocks": [
+        {
+            "type": "company",
+            "name": "company-istory",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "JOLLY DESIGNS Ltd.",
+                    "label": "Header"
+                },
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "default":"Jolly Designs GmbH stands for unique, magical and wonderful toys. Our products range from Quiet Books, cute accessories for toddlers to wall decor for the nursery.We offer high quality, innovative and responsible products for curious and imaginative little minds.",
+                    "label": "Text"
+                }
+            ]
+        },
+        {
+            "type": "info",
+            "name": "info-company",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "Information",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "link",
+                    "default":"Terms of use",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "type": "about",
+            "name": "about-company",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "Information",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "link",
+                    "default":"Terms of use",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "type": "newsletter",
+            "name": "newsletter-company",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "Information",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "link",
+                    "default":"Terms of use",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "type": "pay",
+            "name": "pay-info",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "paypal",
+                    "label": "paypal"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "amex",
+                    "label": "amex"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gpay",
+                    "label": "gpay"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "visa",
+                    "label": "visa"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "applepay",
+                    "label": "applepay"
+                }
+            ]
+        },
+        {
+            "type": "copyright",
+            "name": "copyright-company",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "default": "© 2022, Jolly Designs",
+                    "label": "Header"
+                }
+            ]
+        },
+        {
+            "type": "social",
+            "name": "social-info",
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "facebook",
+                    "label": "Show facebook",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "twitter",
+                    "label": "Show twitter",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "pinterest",
+                    "label": "Show pinterest",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "insta",
+                    "label": "Show instagram",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "shopify",
+                    "label": "Show shopify",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "youtube",
+                    "label": "Show youtube",
+                    "default": true
+                }
+            ]
+        }
+    ],
+  "presets": [
+    {
+        "name":"footer"
+    }
+]
+}
+{% endschema %}
