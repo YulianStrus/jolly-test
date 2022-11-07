@@ -57,15 +57,33 @@
 		<div class="footer_bottom">
 			<div class="divider"></div>
 			<div class="pay">
-				<a href="#">{% render 'amex' %}</a>
-				<a href="#">{% render 'apple_pay' %}</a>
-				<a href="#">{% render 'google_pay' %}</a>
-				<a href="#">{% render 'klarna' %}</a>
-				<a href="#">{% render 'mastercard2' %}</a>
-				<a href="#">{% render 'mastercard' %}</a>
-				<a href="#">{% render 'paypal' %}</a>
-				<a href="#">{% render 'opay' %}</a>
-				<a href="#">{% render 'visa' %}</a>
+                {% if block.settings.amex %}
+				    <a href="#">{% render 'amex' %}</a>
+                {% endif %}
+                {% if block.settings.apple_pay %}
+				    <a href="#">{% render 'apple_pay' %}</a>
+                {% endif %}
+                {% if block.settings.google_pay %}
+				    <a href="#">{% render 'google_pay' %}</a>
+                {% endif %}
+                {% if block.settings.klarna %}
+				    <a href="#">{% render 'klarna' %}</a>
+                {% endif %}
+                {% if block.settings.mastercard2 %}
+				    <a href="#">{% render 'mastercard2' %}</a>
+                {% endif %}
+                {% if block.settings.mastercard %}
+				    <a href="#">{% render 'mastercard' %}</a>
+                {% endif %}
+                {% if block.settings.paypal %}
+				    <a href="#">{% render 'paypal' %}</a>
+                {% endif %}
+                {% if block.settings.opay %}
+				    <a href="#">{% render 'opay' %}</a>
+                {% endif %}
+                {% if block.settings.visa %}
+                    <a href="#">{% render 'visa' %}</a>
+                {% endif %}
 			</div>
             {%- when 'copyright' -%}
 			<p class="copyright">{{ block.settings.copyright-header }}</p>
@@ -103,7 +121,7 @@
   "blocks": [
         {
             "type": "company",
-            "name": "company-istory",
+            "name": "company-history",
             "settings": [
                 {
                     "type": "text",
@@ -178,29 +196,58 @@
             "name": "pay-info",
             "settings": [
                 {
-                    "type": "image_picker",
-                    "id": "paypal",
-                    "label": "paypal"
-                },
-                {
-                    "type": "image_picker",
+                    "type": "checkbox",
                     "id": "amex",
-                    "label": "amex"
+                    "label": "Show amex",
+                    "default": true
                 },
                 {
-                    "type": "image_picker",
-                    "id": "gpay",
-                    "label": "gpay"
+                    "type": "checkbox",
+                    "id": "apple_pay",
+                    "label": "Show apple pay",
+                    "default": true
                 },
                 {
-                    "type": "image_picker",
+                    "type": "checkbox",
+                    "id": "google_pay",
+                    "label": "Show google pay",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "klarna",
+                    "label": "Show klarna",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "mastercard",
+                    "label": "Show mastercard",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "mastercard2",
+                    "label": "Show mastercard",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "paypal",
+                    "label": "Show paypal",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "opay",
+                    "label": "Show opay",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
                     "id": "visa",
-                    "label": "visa"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "applepay",
-                    "label": "applepay"
+                    "label": "Show visa",
+                    "default": true
                 }
             ]
         },
@@ -259,10 +306,30 @@
             ]
         }
     ],
-  "presets": [
-    {
-        "name":"footer"
-    }
-]
+    "default": {
+        "blocks": [
+          {
+            "type": "company"
+          },
+          {
+            "type": "info"
+          },
+          {
+            "type": "about"
+          },
+          {
+            "type": "newsletter"
+          },
+          {
+            "type": "pay"
+          },
+          {
+            "type": "copyright"
+          },
+          {
+            "type": "social"
+          }
+        ]
+      }
 }
 {% endschema %}
