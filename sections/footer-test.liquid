@@ -7,35 +7,63 @@
 
 				{%- when 'company' -%}
 			<div class="footer_info">
-				<h1 class="footer_title">JOLLY DESIGNS Ltd.</h1>
-				<p class="footer_info_text">Jolly Designs GmbH stands for unique, magical and wonderful toys. Our products range from Quiet Books, cute accessories for toddlers to wall decor for the nursery.We offer high quality, innovative and responsible products for curious and imaginative little minds.</p>
+				<h1 class="footer_title">{{ block.settings.header}}</h1>
+				<p class="footer_info_text">{{ block.settings.text}}</p>
 			</div>
 			{%- when 'info' -%}
 			<div class="footer__blocks">
 				<div class="footer__block">
-					<h1 class="footer_title">Information</h1>
-					<a href="#" class="footer__block_text">Terms of use</a>
-					<a href="#" class="footer__block_text">Delivery</a>
-					<a href="#" class="footer__block_text">Privacy and data protection</a>
-					<a href="#" class="footer__block_text">Return</a>
-					<a href="#" class="footer__block_text">Cancellation policy</a>
-					<a href="#" class="footer__block_text">Imprint</a>
-					<a href="#" class="footer__block_text">Payment methods</a>
-					<a href="#" class="footer__block_text">General terms and conditions</a>
-					<a href="#" class="footer__block_text">Refund Policy</a>
+					<h1 class="footer_title">{{ block.settings.header}}</h1>
+                    {% if block.settings.link != blank %}
+					    <a href="#" class="footer__block_text">{{ block.settings.link}}</a>
+                    {% endif %}
+                    {% if block.settings.link_1 != blank %}
+					    <a href="#" class="footer__block_text">{{ block.settings.link_1}}</a>
+                    {% endif %}
+                    {% if block.settings.link_2 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_2}}</a>
+                    {% endif %}
+                    {% if block.settings.link_3 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_3}}</a>
+                    {% endif %}
+                    {% if block.settings.link_4 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_4}}</a>
+                    {% endif %}
+                    {% if block.settings.link_5 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_5}}</a>
+                    {% endif %}
+                    {% if block.settings.link_6 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_6}}</a>
+                    {% endif %}
+                    {% if block.settings.link_7 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_7}}</a>
+                    {% endif %}
+                    {% if block.settings.link_8 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_8}}</a>
+                    {% endif %}
 				</div>
 				{%- when 'about' -%}
 				<div class="footer__block footer__block_pd">
-					<h1 class="footer_title">About Us</h1>
-					<a href="#" class="footer__block_text">Our History</a>
-					<a href="#" class="footer__block_text">About Us</a>
-					<a href="#" class="footer__block_text">Manufacturing Process</a>
-					<a href="#" class="footer__block_text">Trade Fairs</a>
-					<a href="#" class="footer__block_text">Quiet Books Blog</a>
+					<h1 class="footer_title">{{ block.settings.header}}</h1>
+					{% if block.settings.link != blank %}
+					    <a href="#" class="footer__block_text">{{ block.settings.link}}</a>
+                    {% endif %}
+                    {% if block.settings.link_1 != blank %}
+					    <a href="#" class="footer__block_text">{{ block.settings.link_1}}</a>
+                    {% endif %}
+                    {% if block.settings.link_2 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_2}}</a>
+                    {% endif %}
+                    {% if block.settings.link_3 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_3}}</a>
+                    {% endif %}
+                    {% if block.settings.link_4 != blank %}
+                        <a href="#" class="footer__block_text">{{ block.settings.link_4}}</a>
+                    {% endif %}
 				</div>
 				{%- when 'newsletter' -%}
 				<div class="footer__block">
-					<h1 class="footer_title">Newsletter</h1>
+					<h1 class="footer_title">{{ block.settings.header}}</h1>
 					<form class="footer_form" action="/">
 						<input class="footer_input" type="input" placeholder="E-mail">
 						<input class="footer_button" type="button" value="Subscribe">
@@ -152,6 +180,54 @@
                     "id": "link",
                     "default":"Terms of use",
                     "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_1",
+                    "default":"Delivery",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_2",
+                    "default":"Privacy and data protection",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_3",
+                    "default":"Return",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_4",
+                    "default":"Cancellation policy",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_5",
+                    "default":"Imprint",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_6",
+                    "default":"Payment methods",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_7",
+                    "default":"General terms and conditions",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_8",
+                    "default":"Refund Policy",
+                    "label": "Link"
                 }
             ]
         },
@@ -162,13 +238,37 @@
                 {
                     "type": "text",
                     "id": "header",
-                    "default": "Information",
+                    "default": "About Us",
                     "label": "Header"
                 },
                 {
                     "type": "text",
                     "id": "link",
-                    "default":"Terms of use",
+                    "default":"Our History",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_1",
+                    "default":"About Us",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_2",
+                    "default":"Manufacturing Process",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_3",
+                    "default":"Trade Fairs",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_4",
+                    "default":"Quiet Books Blog",
                     "label": "Link"
                 }
             ]
