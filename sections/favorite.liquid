@@ -1,0 +1,82 @@
+<div class="favorite">
+	<button class="favorite_prev">{%render 'icon-left-yellow'%}</button>
+	<button class="favorite_next">{%render 'icon-right-blue'%}</button>
+	<div class="favorite_slider">		
+		{%- for block in section.blocks -%}
+		<div class="favorite_slider_item">
+			<div class="{{ block.settings.color}}">
+				<img class="favorite_img" src="{{ block.settings.image | img_url: "master" }}" alt="">
+				<h2>{{ block.settings.kategory }}</h2>
+				<div class="favorite_stars">
+					{%render 'icon-star'%}
+					{%render 'icon-star'%}
+					{%render 'icon-star'%}
+					{%render 'icon-star'%}
+					{%render 'icon-star'%}
+				</div>
+				<h1 class="favorite_title">{{ block.settings.header }}</h1>
+				<p class="favorite_text">{{ block.settings.text }}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% schema %}
+  {
+    "name": "favorite",
+	"max_blocks": 6,
+	"blocks": [
+	  {
+		"type": "favorite",
+		"name": "t:sections.favorite.blocks.favorite.header",
+		"settings": [
+			{
+				"type":"select",
+				"id":"color",
+				"label":"Background color",
+				"options":[
+				   {
+					  "value":"favorite_left",
+					  "label":"Left"
+				   },
+				   {
+					  "value":"favorite_right",
+					  "label":"Right"
+				   }
+				],
+				"default": "favorite_left"
+			 },
+		{
+            "type": "image_picker",
+            "id": "image",
+			"label": "image"
+        },
+        {
+            "type": "text",
+            "id": "kategory",
+            "default": "The Favorite Over Partners",
+            "label": "Katregory"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "default": "Monica Rendel",
+            "label": "Header"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "default": "Brings' color in the children's room but also ideally suited for the living room or bedroom. With our hand-woven wall rug, the home becomes even more of a feel-good oasis.",
+            "label": "Text"
+        }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name":"favorite"
+        }
+    ]
+  }
+{% endschema %}

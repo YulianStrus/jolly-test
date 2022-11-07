@@ -44,9 +44,9 @@ $(document).ready(function () {
     slidesToShow: 2,
     slidesToScroll: 1,
     // eslint-disable-next-line max-len
-    prevArrow: '<img src=\'img/svg/icons/icon-left-yellow.svg\' class=\'favorite_prev\' alt=\'1\'>',
+    prevArrow: $(".favorite_prev"),
     // eslint-disable-next-line max-len
-    nextArrow: '<img src=\'img/svg/icons/icon-right-blue.svg\' class=\'favorite_next\' alt=\'2\'>'
+    nextArrow: $(".favorite_next")
   });
   $('.meet_slider').slick({
     infinite: true,
