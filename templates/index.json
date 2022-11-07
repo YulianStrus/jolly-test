@@ -8,9 +8,89 @@
         "image_2": "shopify:\/\/shop_images\/discover_new1.png",
         "image_3": "shopify:\/\/shop_images\/discover_new1.png"
       }
+    },
+    "bf5c1820-53a4-4f53-8c3f-cfc4ade2ac4b": {
+      "type": "madeBook",
+      "blocks": {
+        "c9c21997-134b-4341-b383-ea2ff59f22b6": {
+          "type": "madeBook",
+          "settings": {
+            "header": "Step 1",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          }
+        },
+        "8d3dc5a7-f75a-46d4-9d21-fa4dae9d548e": {
+          "type": "madeBook",
+          "settings": {
+            "header": "Step 1",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+          }
+        }
+      },
+      "block_order": [
+        "c9c21997-134b-4341-b383-ea2ff59f22b6",
+        "8d3dc5a7-f75a-46d4-9d21-fa4dae9d548e"
+      ],
+      "settings": {
+        "header": "How our Quiet Books are made",
+        "image": "shopify:\/\/shop_images\/made_books.png"
+      }
+    },
+    "ee72f355-1fce-40df-9118-ac21d7c2d49e": {
+      "type": "bestseller",
+      "blocks": {
+        "57c2b7f5-d0e5-415b-97a2-f7391fb2aa66": {
+          "type": "madeBook",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/item1.png",
+            "header": "Jolly Baby - 6 pages Mini Quiet Book",
+            "price": "€39,99",
+            "button": "Add to cart"
+          }
+        },
+        "cbf57e37-8a55-4b87-99d1-1f7906f1af2f": {
+          "type": "madeBook",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/item4.png",
+            "header": "Jolly Baby - 6 pages Mini Quiet Book",
+            "price": "€39,99",
+            "button": "Add to cart"
+          }
+        },
+        "748b7757-0091-4dbb-a418-ed8d46e49f9d": {
+          "type": "madeBook",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/item2.png",
+            "header": "Jolly Baby - 6 pages Mini Quiet Book",
+            "price": "€39,99",
+            "button": "Add to cart"
+          }
+        },
+        "454f1c10-7f20-4446-b3b0-f2c3042f697f": {
+          "type": "madeBook",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/item3.png",
+            "header": "Jolly Baby - 6 pages Mini Quiet Book",
+            "price": "€39,99",
+            "button": "Add to cart"
+          }
+        }
+      },
+      "block_order": [
+        "57c2b7f5-d0e5-415b-97a2-f7391fb2aa66",
+        "cbf57e37-8a55-4b87-99d1-1f7906f1af2f",
+        "748b7757-0091-4dbb-a418-ed8d46e49f9d",
+        "454f1c10-7f20-4446-b3b0-f2c3042f697f"
+      ],
+      "settings": {
+        "header": "Shop Our Bestseller",
+        "collection": ""
+      }
     }
   },
   "order": [
-    "1d7d84cd-4f80-4942-8df9-95afc5324d02"
+    "1d7d84cd-4f80-4942-8df9-95afc5324d02",
+    "bf5c1820-53a4-4f53-8c3f-cfc4ade2ac4b",
+    "ee72f355-1fce-40df-9118-ac21d7c2d49e"
   ]
 }
